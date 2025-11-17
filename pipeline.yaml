@@ -1,0 +1,26 @@
+project_id: iron-tofu-111222
+region: asia-northeast1
+
+#Define GCS bucket and BQ table for each source
+sources:
+  - name: a_revenue_report
+    pattern: "./source/a_revenue_report_*.xlsx" #Naming converntion of raw files
+    bucket: a_report #GCS bucket to upload to
+    dataset: a_data #BQ destination dataset
+    table: royalty_report #BQ table name
+    cleaner: "a_data" #Name of cleaning function in report_cleanup.py
+  - name: a_video_report
+    pattern: "./source/a_video_revenue_report_*.xlsx"
+    bucket: a_report
+    dataset: a_data
+    table: video_report
+    cleaner: "a_data"
+  - name: b_revenue_report
+    pattern: "./source/b_royalty_report_*.csv" #Can't do this currently. Files with different encodings
+    dtypes:
+      request_month: str 
+      streams_downloads: Int64
+    bucket: b_report
+    dataset: b_data
+    table: royalty_report
+    cleaner: "b_revenue"

@@ -2,7 +2,7 @@ Description:<br>
 Automated ETL pipeline for processing monthly payment reports. Reads raw csv/xlsx files, cleans them, and loads them to BQ
 
 Project Structure:<br>
--creds: Store google service acount json credential file here<br>
+-creds/: Store google service acount json credential file here<br>
 -exports/: bad_isrcs.csv gets exported here.<br>
 -scripts/: Python scripts to run this program<br>
 -source/: Drop raw data files here.<br>

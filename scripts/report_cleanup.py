@@ -88,7 +88,7 @@ def run(source, report_date):
         df_initial = combine_dataframes(source, paths)
 
         return clean_a_report(source, df_initial, report_date)
-    elif source['cleaner'] == 'b_revenue':
+    elif source['cleaner'] == 'b_data':
         #Need special treatment for b revenue reports as they are so helpless
         return treat_b_revenue(report_date)
     else:

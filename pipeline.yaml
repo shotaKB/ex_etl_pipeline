@@ -23,4 +23,4 @@ sources:
     bucket: b_report
     dataset: b_data
     table: royalty_report
-    cleaner: "b_revenue"
+    cleaner: "b_data"
